@@ -2,13 +2,28 @@
 
 This is a sample structure for hosting your own version of the [Open Notebook](https://github.com/lfnovo/open-notebook). This will run the application and its infrastructure, as well as setup folders for persistence customization. 
 
+## Clone this repository
+
+Start by cloning this repo and cd into it.
+
+```bash
+git clone https://github.com/lfnovo/open-notebook-boilerplate
+cd open-notebook-boilerplate
+````
+
 ## Setup the docker.env file
 
 Rename `docker.env.example` into `docker.env` and set up your API keys.
 
+```bash
+cp docker.env.example docker.env
+```
+
+Edit docker.env for your API Keys.
+
 ## Create a folder for your data
 
-In this folder, run `mkdir opennotebook_data`. This folder will be use to store everything you upload and every media you create, like podcasts. 
+In this folder, run `mkdir notebook_data`. This folder will be use to store everything you upload and every media you create, like podcasts. 
 
 ## Run the app
 
@@ -21,7 +36,7 @@ After the app starts, go to `http://localhost:8080`
 
 After you login for the first time, you'll be required to set up the database.
 Just click OK and it'll take 5 seconds. 
- 
+
 Later, you'll get a warning to setup different models. 
 
 Go to Settings page and create 4 models, one for each type. 
