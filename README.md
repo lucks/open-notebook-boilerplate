@@ -19,7 +19,9 @@ After the app starts, go to `http://localhost:8080`
 
 ## Setting up for the first time
 
-After you login for the first time, you'll be required to set up the database. 
+After you login for the first time, you'll be required to set up the database.
+Just click OK and it'll take 5 seconds. 
+ 
 Later, you'll get a warning to setup different models. 
 
 Go to Settings page and create 4 models, one for each type. 
