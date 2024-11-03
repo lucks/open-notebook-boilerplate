@@ -23,7 +23,7 @@ Edit docker.env for your API Keys.
 
 ## Create a folder for your data
 
-In this folder, run `mkdir notebook_data`. This folder will be use to store everything you upload and every media you create, like podcasts. 
+In this folder, run `mkdir notebook_data`. This folder will be used to store everything you upload and every media you create, like podcasts. 
 
 ## Run the app
 
