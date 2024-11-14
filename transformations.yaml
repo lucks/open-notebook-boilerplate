@@ -4,7 +4,6 @@ source_insights:
     insight_type: "Content Summary"
     description: "Summarize the content"
     patterns:
-      - patterns/default/makeitdense
       - patterns/default/summarize
   - name: "Key Insights"
     insight_type: "Key Insights"
@@ -16,6 +15,11 @@ source_insights:
     description: "Create a dense representation of the content"
     patterns:
       - patterns/default/makeitdense
+  - name: "Table of Contents"
+    insight_type: "Table of Contents"
+    description: "Analyzes the content and returns a ToC"
+    patterns:
+      - patterns/default/analyze_paper
   - name: "Analyze Paper"
     insight_type: "Paper Analysis"
     description: "Analyze the paper and provide a quick summary"
@@ -26,3 +30,10 @@ source_insights:
     description: "Generates a list of insightful questions to provoke reflection"
     patterns:
       - patterns/default/reflection_questions
+  # - name: "Reflection [PT]"
+  #   insight_type: "Reflection Questions [PT]"
+  #   description: "Generates a list of insightful questions to provoke reflection"
+  #   patterns:
+  #     - patterns/default/reflection_questions
+  #     - patterns/user/translate
+
