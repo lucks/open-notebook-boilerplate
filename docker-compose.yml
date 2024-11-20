@@ -22,5 +22,3 @@ services:
     pull_policy: always
     volumes:
       - ./notebook_data:/app/data
-      - ./transformations.yaml:/app/transformations.yaml
-      - ./user:/app/prompts/patterns/user
