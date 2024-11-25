@@ -9,6 +9,7 @@ services:
       - ./surreal_data/:/mydata
     command: start --user root --pass root rocksdb:/mydata/mydatabase.db
     pull_policy: always
+    restart: always
     user: root
 
   open_notebook:
@@ -20,5 +21,6 @@ services:
     depends_on:
       - surrealdb
     pull_policy: always
+    restart: always
     volumes:
       - ./notebook_data:/app/data
