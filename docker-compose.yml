@@ -7,7 +7,7 @@ services:
       - "8000:8000"
     volumes:
       - ./surreal_data/:/mydata
-    command: start --user root --pass root rocksdb:/mydata/mydatabase.db
+    command: start --user $DB_USER --pass $DB_PASSWORD rocksdb:/mydata/mydatabase.db
     pull_policy: always
     restart: always
     user: root
@@ -17,7 +17,7 @@ services:
     ports:
       - "8080:8502"
     env_file:
-      - docker.env
+      - .env
     depends_on:
       - surrealdb
     pull_policy: always
