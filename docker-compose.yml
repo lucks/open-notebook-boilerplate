@@ -23,4 +23,4 @@ services:
     pull_policy: always
     restart: always
     volumes:
-      - ./notebook_data:/app/data
+      -  /persistent/path:/app/data
