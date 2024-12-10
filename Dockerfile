@@ -1,8 +1,9 @@
-# Usa la imagen base de Open Notebook
-FROM lfnovo/open_notebook:latest
+# Servicio surrealdb
+FROM surrealdb/surrealdb:v2 as surrealdb
+RUN mkdir -p /mydata
+CMD ["start", "--user", "root", "--pass", "root", "rocksdb:/mydata/mydatabase.db"]
 
-# Copia los archivos necesarios (opcional)
+# Servicio open_notebook
+FROM lfnovo/open_notebook:latest as notebook
 COPY notebook_data /app/data
-
-# Define el comando para ejecutar el contenedor (ya está incluido en la imagen base)
 CMD ["streamlit", "run", "app.py"]
