@@ -1,0 +1,37 @@
+services:
+  - name: surrealdb
+    type: web
+    env: docker
+    docker:
+      image: surrealdb/surrealdb:v2
+    plan: free
+    ports:
+      - 8000
+    envVars:
+      - key: SURREAL_USER
+        value: root
+      - key: SURREAL_PASS
+        value: root
+    disk:
+      name: surreal_data
+      mountPath: /mydata
+    startCommand: start --user root --pass root rocksdb:/mydata/mydatabase.db
+
+  - name: open_notebook
+    type: web
+    env: docker
+    docker:
+      image: lfnovo/open_notebook:latest
+    plan: free
+    ports:
+      - 8080
+    envVars:
+      - key: DB_USER
+        sync: true
+      - key: DB_PASSWORD
+        sync: true
+    disk:
+      name: notebook_data
+      mountPath: /app/data
+    dependsOn:
+      - surrealdb
